@@ -2,15 +2,13 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class User extends Authenticatable
+class Relative extends Model
 {
-    use HasFactory, Notifiable;
+    use HasFactory;
 
     /**
      * The attributes that are mass assignable.
@@ -18,6 +16,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'type',
         'name',
         'email',
         'password',
@@ -46,8 +45,8 @@ class User extends Authenticatable
         ];
     }
 
-    public function relatives(): HasMany
+    public function user(): BelongsTo
     {
-        return $this->hasMany(Relative::class);
+        return $this->belongsTo(User::class);
     }
 }
