@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('family_id')->constrained();
             $table->string('name');
-            $table->string('description');
+            $table->text('description');
             $table->integer('points');
             $table->timestamps();
         });
