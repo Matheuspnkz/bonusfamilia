@@ -16,6 +16,7 @@ class Relative extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'user_id',
         'type',
         'name',
         'email',

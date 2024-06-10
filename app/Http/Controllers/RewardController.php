@@ -60,7 +60,17 @@ class RewardController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $rewards = Reward::find($id);
+        if (!empty($rewards))
+        {
+            return response()->json($rewards);
+        }
+        else
+        {
+            return response()->json([
+                "message" => "Reward not found!"
+            ], 404);
+        }
     }
 
     /**
@@ -74,7 +84,7 @@ class RewardController extends Controller
             $rewards->save();
             return response()->json([
                 "message" => "Reward updated successfully!"
-            ], 404);
+            ], 200);
         }else{
             return response()->json([
                 "message" => "Reward not found!"

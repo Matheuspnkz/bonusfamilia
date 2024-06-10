@@ -57,21 +57,28 @@ class FamilyController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $families = Family::find($id);
+        if (!empty($families)) {
+            return response()->json($families);
+        } else {
+            return response()->json([
+                "message" => "Family not found!"
+            ], 404);
+        }
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(string $id): JsonResponse
+    public function update(Request $request, string $id): JsonResponse
     {
         $families = Family::find($id);
         if (!empty($families)) {
-            $families->update($families->all());
+            $families->update($request->all());
             $families->save();
             return response()->json([
                 "message" => "Family updated successfully!"
-            ], 404);
+            ], 200);
         } else {
             return response()->json([
                 "message" => "Family not found!"

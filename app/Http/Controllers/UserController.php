@@ -47,7 +47,17 @@ class UserController extends Controller
 
     public function edit(string $id)
     {
-        //
+        $user = User::find($id);
+        if (!empty($user))
+        {
+            return response()->json($user);
+        }
+        else
+        {
+            return response()->json([
+                "message" => "User not found!"
+            ], 404);
+        }
     }
 
     public function update(Request $request, $id)
@@ -58,7 +68,7 @@ class UserController extends Controller
             $user->save();
             return response()->json([
                 "message" => "User updated successfully!"
-            ], 404);
+            ], 200);
         }else{
             return response()->json([
                 "message" => "User not found!"

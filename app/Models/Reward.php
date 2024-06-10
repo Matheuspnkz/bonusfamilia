@@ -17,6 +17,7 @@ class Reward extends Model
      */
     protected $fillable = [
         'name',
+        'family_id',
         'description',
         'value'
     ];

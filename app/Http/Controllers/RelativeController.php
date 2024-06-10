@@ -60,7 +60,17 @@ class RelativeController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $relatives = Relative::find($id);
+        if (!empty($relatives))
+        {
+            return response()->json($relatives);
+        }
+        else
+        {
+            return response()->json([
+                "message" => "Relative not found!"
+            ], 404);
+        }
     }
 
     /**
@@ -74,7 +84,7 @@ class RelativeController extends Controller
             $relatives->save();
             return response()->json([
                 "message" => "Relative updated successfully!"
-            ], 404);
+            ], 200);
         }else{
             return response()->json([
                 "message" => "Relative not found!"

@@ -1,0 +1,388 @@
+{
+	"info": {
+		"_postman_id": "44d4ca11-d7e8-4bcc-aa60-02a4c465d504",
+		"name": "BonusFamilia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "36219308"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "ListaUsuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://bonusfamilia/api/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Usuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://bonusfamilia/api/users/5"
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Usuario Edição",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://bonusfamilia/api/users/1/edit"
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://bonusfamilia/api/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Usuario",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "{{content}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"João\",\r\n    \"email\": \"joao231@gmail.com\",\r\n    \"password\": \"123senha56465432135123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://bonusfamilia/api/users/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Relatives",
+			"item": [
+				{
+					"name": "List Relatives",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://bonusfamilia/api/relatives"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Relative",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://bonusfamilia/api/relatives/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Relative (Edit)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://bonusfamilia/api/relatives/1/edit"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Relative",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Filho\",\r\n    \"email\": \"filhodojoao6545@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"type\": \"1\",\r\n    \"user_id\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://bonusfamilia/api/relatives"
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Relative",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "{{content}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Filho Da Puta\",\r\n    \"email\": \"filhodojoao@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"type\": \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://bonusfamilia/api/relatives/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rewards",
+			"item": [
+				{
+					"name": "List Rewards",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://bonusfamilia/api/rewards"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Reward",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://bonusfamilia/api/rewards/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Reward (Edit)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://bonusfamilia/api/rewards/1/edit"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Reward",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://bonusfamilia/api/rewards"
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Reward",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "{{content}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"LouçaLavada\",\r\n    \"description\": \"mucho bom\",\r\n    \"value\": \"10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://bonusfamilia/api/rewards/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Families",
+			"item": [
+				{
+					"name": "List Families",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://bonusfamilia/api/families"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Family",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://bonusfamilia/api/families/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Family (Edit)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://bonusfamilia/api/families/1/edit"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Family",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Penkz\",\r\n    \"user_id\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://bonusfamilia/api/families"
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Family",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "{{content}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Penques\",\r\n    \"user_id\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://bonusfamilia/api/families/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "List Tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://bonusfamilia/api/families"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Task",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://bonusfamilia/api/families/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Task (Edit)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://bonusfamilia/api/families/1/edit"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Penkz\",\r\n    \"user_id\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://bonusfamilia/api/families"
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Task",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "{{content}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Penques\",\r\n    \"user_id\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://bonusfamilia/api/families/1"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "content",
+			"value": "application/json"
+		}
+	]
+}
